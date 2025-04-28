@@ -1,0 +1,70 @@
+package com.excelr.service;
+
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.excelr.entity.User;
+import com.excelr.repo.UserRepo;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserRepo repo;
+	
+	public ResponseEntity<?> getAllUsers(){
+		List<User> response= repo.findAll();
+		return ResponseEntity.ok().body(response);
+	}
+	public ResponseEntity<?> getUserById(Integer id){
+		Optional<User> useropt= repo.findById(id);
+		if(useropt.isPresent()) {
+			return ResponseEntity.ok().body(useropt);
+		}else {
+			return ResponseEntity.status(404).body("user not found");
+		}
+	}
+	
+	public ResponseEntity<?> getUserByName(String name){
+		Optional<User> useropt= repo.FindByName(name);
+		if(useropt.isPresent()) {
+			return ResponseEntity.ok().body(useropt);
+		}else {
+			return ResponseEntity.status(404).body("user not found");
+		}
+	}
+	
+	public ResponseEntity<?> createUser(User user){
+		repo.save(user);
+		return ResponseEntity.ok().body("user data saved succesfully");
+	}
+	public ResponseEntity<?> updateUser(User user){
+		Optional<User> useropt= repo.findById(user.getId());
+		if(useropt.isPresent()) {
+			User user1= useropt.get();
+			user1.setName(user.getName());
+			user1.setEmail(user.getEmail());
+			user1.setMobile_number(user.getMobile_number());
+			user1.setPassword(user.getPassword());
+			user1.setRole(user.getRole());
+			return ResponseEntity.ok().body("User Updated Sucessfully");
+		}else {
+			return ResponseEntity.ok().body("user not found");
+		}
+	}
+	
+	public ResponseEntity<?> deleteUser(Integer id){
+		Optional<User> useropt = repo.findById(id);
+		if(useropt.isPresent()) {
+			repo.deleteById(id);
+			return ResponseEntity.ok().body("User deleted successfully");
+		}else {
+			return ResponseEntity.ok().body("User doesnot exist");
+		}
+	}
+}

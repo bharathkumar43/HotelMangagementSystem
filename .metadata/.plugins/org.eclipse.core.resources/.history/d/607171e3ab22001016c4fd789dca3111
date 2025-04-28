@@ -1,0 +1,12 @@
+package com.excelr.entity;
+
+public enum Role {
+
+	Role_ADMIN,
+	Role_USER,
+	Role_GUEST;
+	
+	public String getAuthority() {
+		return name();
+	}
+}
