@@ -1,30 +1,76 @@
-16:30:52 Microsoft.Shutdown.OnWindowClosing
-16:30:52 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-16:30:52 Widget Closed: BrowserFrame
-16:30:52 Microsoft.Shutdown.OnWindowClosing
-16:30:52 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-16:30:52 Microsoft.Browser_Removed
-16:30:52 Microsoft.Shutdown.OnWindowClosing
-16:30:52 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
-16:30:52 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
-16:30:52 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-16:30:52 Tab61 RenderProcessGone
-16:30:52 Browser61 Close Tab61 at 0
-16:30:52 Tab61 WebContentsDestroyed
-16:30:52 Microsoft.Shutdown.OnWindowClosing
-16:30:52 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-16:30:52 Widget Closed: BrowserFrame
-16:30:52 Microsoft.Shutdown.OnWindowClosing
-16:30:52 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-16:30:52 Microsoft.Browser_Removed
-16:30:52 Microsoft.Shutdown.OnWindowClosing
-16:30:52 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
-16:30:52 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
-16:30:52 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-16:30:52 Tab143 RenderProcessGone
-16:30:52 Browser143 Close Tab143 at 0
-16:30:52 Tab143 WebContentsDestroyed
-16:30:52 Microsoft.Shutdown.OnWindowClosing
-16:30:52 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-16:30:52 Widget Closed: BrowserFrame
-16:30:52 Microsoft.Shutdown.OnWindowClosing
+0:57:06 Tab45 StartNav570 #typed
+0:57:06 Tab45 FinishNav570
+0:57:06 Tab45 PageLoad
+0:57:10 Tab45 StartNav571 #typed
+0:57:10 Tab45 FinishNav571
+0:57:10 Tab45 PageLoad
+0:57:22 Tab45 StartNav572 #typed
+0:57:22 Tab45 FinishNav572
+0:57:22 Tab45 PageLoad
+0:57:25 Tab45 StartNav573 #typed
+0:57:25 Tab45 FinishNav573
+0:57:25 Tab45 PageLoad
+0:57:36 Tab45 StartNav574 #typed
+0:57:36 Tab45 FinishNav574
+0:57:36 Tab45 PageLoad
+0:57:37 Tab45 StartNav575 #typed
+0:57:37 Tab45 FinishNav575
+0:57:37 Tab45 PageLoad
+0:57:44 Tab45 StartNav576 #typed
+0:57:44 Tab45 FinishNav576
+0:57:44 Tab45 PageLoad
+0:57:45 Tab45 StartNav577 #typed
+0:57:45 Tab45 FinishNav577
+0:57:45 Tab45 PageLoad
+0:57:47 Tab45 StartNav578 #typed
+0:57:47 Tab45 FinishNav578
+0:57:47 Tab45 PageLoad
+0:57:55 Tab45 StartNav579 #typed
+0:57:56 Tab45 FinishNav579
+0:57:56 Tab45 PageLoad
+0:57:59 Tab45 StartNav580 #typed
+0:57:59 Tab45 FinishNav580
+0:57:59 Tab45 PageLoad
+0:58:01 Tab45 StartNav581 #typed
+0:58:01 Tab45 FinishNav581
+0:58:01 Tab45 PageLoad
+0:58:12 Microsoft.Shutdown.OnWindowClosing
+0:58:12 Microsoft.Shutdown.OnWindowClosing_MaybeClearBrowsingDataOnExit
+0:58:12 Microsoft.Shutdown.OnWindowClosing_ClearBrowsingDataOnExitNotInProgress
+0:58:12 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+0:58:12 Tab45 RenderProcessGone
+0:58:12 Browser45 Close Tab45 at 0
+0:58:12 Tab45 WebContentsDestroyed
+0:58:12 Microsoft.Shutdown.OnWindowClosing
+0:58:12 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+0:58:12 Widget Closed: BrowserFrame
+0:58:12 Microsoft.Shutdown.OnWindowClosing
+0:58:12 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+0:58:12 Microsoft.Browser_Removed
+0:58:47 Microsoft.NewBrowser_Popup
+0:58:47 Microsoft.BrowserList.AddBrowser
+0:58:47 Browser62 Insert active Tab62 at 0
+0:58:47 Tab62 StartNav582 #auto_toplevel
+0:58:47 Tab62 StartNav583 #typed
+0:58:48 Tab62 FinishNav582
+0:58:48 Tab62 PageLoad
+0:58:48 Tab62 FinishNav583
+0:58:48 Tab62 PageLoad
+0:58:52 Tab62 StartNav584 #typed
+0:58:52 Tab62 FinishNav584
+0:58:52 Tab62 PageLoad
+0:58:53 Tab62 StartNav585 #typed
+0:58:53 Tab62 FinishNav585
+0:58:53 Tab62 PageLoad
+0:58:56 Tab62 StartNav586 #typed
+0:58:56 Tab62 FinishNav586
+0:58:56 Tab62 PageLoad
+1:34:14 Memory Pressure: Moderate
+1:38:29 Memory Pressure: Moderate
+1:44:20 Memory Pressure: Moderate
+2:37:13 Memory Pressure: Moderate
+2:37:23 Memory Pressure: Moderate
+2:37:33 Memory Pressure: Moderate
+2:37:43 Memory Pressure: Moderate
+19:27:40 Memory Pressure: Moderate
+19:27:50 Microsoft.Shutdown.OnWindowClosing
