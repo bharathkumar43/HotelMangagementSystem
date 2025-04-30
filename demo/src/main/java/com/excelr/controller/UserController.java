@@ -1,6 +1,5 @@
 package com.excelr.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -42,11 +41,11 @@ public class UserController {
 	}
 	
 	@PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	public ResponseEntity<?> createUser(@RequestPart User user, @RequestPart("image") MultipartFile image){
+	public ResponseEntity<?> createUser(@RequestPart User user, @RequestPart MultipartFile image){
 		return service.createUser(user, image);
 	}
 	
-	@PutMapping(value= "/{id}", consumes =  MediaType.MULTIPART_FORM_DATA_VALUE)
+	@PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity<?> updateUser(@RequestPart User user, @PathVariable Integer id, @RequestPart MultipartFile image){
 		return service.updateUser(user,id, image);
 	}

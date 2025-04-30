@@ -94,12 +94,12 @@ public class S3Util {
         }
 
         String filename = file.getOriginalFilename();
-        if (filename == null ) {
-            throw new IllegalArgumentException("Unsupported file type. Only images are allowed.");
+        if (filename == null || (!isImageFile(filename))) {
+            throw new IllegalArgumentException("Unsupported file type. Only images and videos are allowed.");
         }
 
         // Validate images using ImageIO
-        if (filename!=null) {
+        if (isImageFile(filename)) {
             try {
                 BufferedImage image = ImageIO.read(file.getInputStream());
                 if (image == null) {
@@ -112,6 +112,12 @@ public class S3Util {
 
     }
 
+    private boolean isImageFile(String filename) {
+        return IMAGE_EXTENSIONS.stream()
+                .anyMatch(ext -> filename.toLowerCase().endsWith(ext));
+    }
+
+    
 
     private String guessContentType(String filename) {
         String lower = filename.toLowerCase();

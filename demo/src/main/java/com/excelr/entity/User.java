@@ -75,10 +75,6 @@ public class User {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", mobile_number=" + mobile_number
 				+ ", password=" + password + ", role=" + role + ", image=" + image + "]";
 	}
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	public User(Integer id, String name, @Email(message = "Please enter valid Email") String email,
 			Integer mobile_number, String password, Role role, String image) {
 		super();
@@ -89,6 +85,10 @@ public class User {
 		this.password = password;
 		this.role = role;
 		this.image = image;
+	}
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 
