@@ -30,12 +30,12 @@ public class UserController {
 		return service.getAllUsers();
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/id/{id}")
 	public ResponseEntity<?> getUserById(@PathVariable Integer id){
 		return service.getUserById(id);
 	}
 	
-	@GetMapping("/{name}")
+	@GetMapping("/name/{name}")
 	public ResponseEntity<?> getUserByName(@PathVariable String name){
 		return service.getUserByName(name);
 	}

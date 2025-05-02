@@ -1,6 +1,7 @@
 package com.excelr.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -22,10 +23,10 @@ public class Bookings {
 	
 	@OneToMany
 	@JoinColumn(name = "category_id", nullable = false)
-	private Category category;
+	private List<Category> category;
 	
 	@OneToMany
 	@JoinColumn(name = "room_id", nullable = false)
-	private Rooms rooms;
+	private List<Rooms> rooms;
 	
 }

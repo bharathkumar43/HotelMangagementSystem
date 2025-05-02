@@ -35,7 +35,7 @@ public class UserService {
 	}
 	
 	public ResponseEntity<?> getUserByName(String name){
-		Optional<User> useropt= repo.FindByName(name);
+		Optional<User> useropt= repo.findByName(name);
 		if(useropt.isPresent()) {
 			return ResponseEntity.ok().body(useropt);
 		}else {

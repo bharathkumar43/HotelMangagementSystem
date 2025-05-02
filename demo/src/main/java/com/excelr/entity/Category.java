@@ -24,6 +24,6 @@ public class Category {
 	private String offer;
 	
 	
-	@OneToMany(mappedBy = "Rooms", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 	private List<Rooms> room;
 }
