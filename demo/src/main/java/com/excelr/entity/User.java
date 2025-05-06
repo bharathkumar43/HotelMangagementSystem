@@ -13,8 +13,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @Data
 public class User {
 	@Id
@@ -23,11 +21,12 @@ public class User {
 	private String name;
 	@Email(message = "Please enter valid Email")
 	private String email;
-	private Integer mobile_number;
+	private Long mobile_number;
 	private String password;
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	private String image;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -46,10 +45,10 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Integer getMobile_number() {
+	public Long getMobile_number() {
 		return mobile_number;
 	}
-	public void setMobile_number(Integer mobile_number) {
+	public void setMobile_number(Long mobile_number) {
 		this.mobile_number = mobile_number;
 	}
 	public String getPassword() {
@@ -70,13 +69,8 @@ public class User {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email + ", mobile_number=" + mobile_number
-				+ ", password=" + password + ", role=" + role + ", image=" + image + "]";
-	}
-	public User(Integer id, String name, @Email(message = "Please enter valid Email") String email,
-			Integer mobile_number, String password, Role role, String image) {
+	public User(Integer id, String name, @Email(message = "Please enter valid Email") String email, Long mobile_number,
+			String password, Role role, String image) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -90,6 +84,10 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", mobile_number=" + mobile_number
+				+ ", password=" + password + ", role=" + role + ", image=" + image + "]";
+	}
 	
-
 }
