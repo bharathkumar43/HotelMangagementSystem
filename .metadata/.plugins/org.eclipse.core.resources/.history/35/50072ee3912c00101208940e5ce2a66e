@@ -1,0 +1,63 @@
+package com.excelr.service;
+
+import com.excelr.model.Room;
+import com.excelr.model.User;
+import com.excelr.repo.RoomRepository;
+import com.excelr.repo.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class UserService {
+
+    @Autowired
+    private UserRepo userRepo;
+
+    @Autowired
+    private RoomRepository roomRepo;
+
+    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    public ResponseEntity<?> createUser(User user) {
+        // Encrypt the password before saving
+        String encryptedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encryptedPassword);
+        userRepo.save(user);
+        return ResponseEntity.ok("User Created");
+    }
+
+    // Create a new Room
+    public ResponseEntity<?> createRoom(Room room) {
+        roomRepo.save(room);
+        return ResponseEntity.ok("Room Created");
+    }
+
+    // Assign a user to a room
+    public ResponseEntity<?> assignRoomToUser(Long userId, Long roomId) {
+        Optional<User> userOptional = userRepo.findById(userId);
+        Optional<Room> roomOptional = roomRepo.findById(roomId);
+
+        if (userOptional.isPresent() && roomOptional.isPresent()) {
+            User user = userOptional.get();
+            Room room = roomOptional.get();
+
+            user.setRoom(room); // Assuming User has a field: private Room room;
+            userRepo.save(user);
+
+            return ResponseEntity.ok("Room assigned to user successfully");
+        } else {
+            return ResponseEntity.badRequest().body("User or Room not found");
+        }
+    }
+
+    // Get room by ID
+    public ResponseEntity<?> getRoomById(Long roomId) {
+        Optional<Room> room = roomRepo.findById(roomId);
+        return room.map(ResponseEntity::ok)
+                   .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+}

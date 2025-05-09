@@ -1,0 +1,26 @@
+package com.excelr.service;
+
+import com.excelr.model.User;
+import com.excelr.repo.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+
+    @Autowired
+    private UserRepo userRepo;
+    
+
+    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    public ResponseEntity<?> createUser(User user) {
+        // Encrypt the password before saving
+        String encryptedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encryptedPassword);
+        userRepo.save(user);
+        return ResponseEntity.ok("User Created");
+    }
+}

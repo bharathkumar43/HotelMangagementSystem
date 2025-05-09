@@ -1,0 +1,30 @@
+package com.excelr.controller;
+
+import com.excelr.model.User;
+import com.excelr.service.UserService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:5173")  // Assuming the frontend is running on this port
+@RequestMapping("/api")  // Optional: prefix all your endpoints with /api for better organization
+public class UserController {
+
+    @Autowired
+    private UserService service;
+
+    // POST request to create/save user
+    @PostMapping("/user")  // Define endpoint more specifically
+    public ResponseEntity<?> createUser(@RequestBody User user) {
+        try {
+            // Call service to handle user creation
+            return service.createUser(user);
+        } catch (Exception e) {
+            // If there's an error, return BAD_REQUEST with error message
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error creating user: " + e.getMessage());
+        }
+    }
+}

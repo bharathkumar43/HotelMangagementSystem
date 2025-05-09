@@ -1,0 +1,66 @@
+package com.excelr.service;
+
+import com.excelr.model.Room;
+import com.excelr.model.RoomType;
+import com.excelr.model.User;
+import com.excelr.repo.RoomRepository;
+import com.excelr.repo.UserRepo;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+
+    @Autowired
+    private UserRepo userRepo;
+    @Autowired
+    private RoomRepository roomRepository;
+
+    public List<Room> getAllRooms() {
+        return roomRepository.findAll();
+    }
+
+    public Optional<Room> getRoomById(Long id) {
+        return roomRepository.findById(id);
+    }
+
+    public List<Room> getRoomsByType(RoomType type) {
+        return roomRepository.findByRoomType(type);
+    }
+
+    public Room saveRoom(Room room) {
+        return roomRepository.save(room);
+    }
+
+    public Room updateRoom(Long id, Room updatedRoom) {
+        return roomRepository.findById(id)
+                .map(room -> {
+                    room.setRoomNumber(updatedRoom.getRoomNumber());
+                    room.setCapacity(updatedRoom.getCapacity());
+                    room.setRoomType(updatedRoom.getRoomType());
+                    return roomRepository.save(room);
+                })
+                .orElse(null);
+    }
+
+    public void deleteRoom(Long id) {
+        roomRepository.deleteById(id);
+    }
+
+    
+    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    public ResponseEntity<?> createUser(User user) {
+        // Encrypt the password before saving
+        String encryptedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encryptedPassword);
+        userRepo.save(user);
+        return ResponseEntity.ok("User Created");
+    }
+}
