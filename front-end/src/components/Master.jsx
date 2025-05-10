@@ -7,15 +7,17 @@ import Reviews from "./user/Reviews";
 import Bookings from "./user/Bookings";
 import Help from "./user/Help";
 import Contact from "./user/Contact";
+import Admin from "./admin/Admin";
 const Master=()=>{
     return(
         <>
         <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Home></Home>}></Route>
-            <Route path="/login" element={<Login></Login>}></Route>
+            <Route path="/home" element={<Home></Home>}></Route>
+            <Route path="/admin" element={<Admin></Admin>}></Route>
+            <Route path="/" element={<Login></Login>}></Route>
             <Route path="/register" element={<Register></Register>}></Route>
-            <Route path="rooms" element={<Rooms></Rooms>}></Route>
+            <Route path="/rooms" element={<Rooms></Rooms>}></Route>
             <Route path="bookings" element={<Bookings></Bookings>}></Route>
             <Route path="reviews" element={<Reviews></Reviews>}></Route>
             <Route path="help" element={<Help></Help>}></Route>

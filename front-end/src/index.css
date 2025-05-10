@@ -12,6 +12,7 @@ body{
 .header{
   height: 20vh;
   box-sizing: border-box;
+  background-color: white;
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
