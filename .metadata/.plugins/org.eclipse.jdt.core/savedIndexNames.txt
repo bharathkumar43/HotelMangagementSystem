@@ -1,3 +1,0 @@
-INDEX VERSION 1.134+C:\Users\bhara\Downloads\backend\HMS_Backend\.metadata\.plugins\org.eclipse.jdt.core
-3435648363.index
-1865797976.index
