@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -335,4 +336,11 @@ const Rooms = () => {
   );
 };
 
+=======
+const Rooms=()=>{
+    return(<>
+    <p> roooms </p>
+    </>)
+}
+>>>>>>> 7b425c3e568c7e513e280977cc29a6ed13dd4186
 export default Rooms;

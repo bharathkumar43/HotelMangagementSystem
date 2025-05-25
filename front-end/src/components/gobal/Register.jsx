@@ -35,7 +35,11 @@ const Register = () => {
 
       if (res.ok) {
         alert('Registration successful!');
+<<<<<<< HEAD
         navigate('/Login');
+=======
+        navigate('/register');
+>>>>>>> 7b425c3e568c7e513e280977cc29a6ed13dd4186
       } else {
         const err = await res.json();
         alert(`Error: ${err.message || 'Registration failed'}`);
@@ -121,7 +125,11 @@ const Register = () => {
             <button type="submit" className="btn-login">Register</button>
 
             <div className="other-links">
+<<<<<<< HEAD
               <p>Already have an account? <Link to="/">Login</Link></p>
+=======
+              <p>Already have an account? <Link to="/login">Login</Link></p>
+>>>>>>> 7b425c3e568c7e513e280977cc29a6ed13dd4186
             </div>
           </form>
         </div>
