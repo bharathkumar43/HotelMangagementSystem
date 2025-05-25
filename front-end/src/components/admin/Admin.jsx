@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 import { NavLink,Link, Outlet } from "react-router-dom";
 import "./Admin.css";
 
-const Admin = () => {
+const admin = () => {
   return (
     <div className="admin-dashboard-container">
       <div className="admin-sidebar">
@@ -25,7 +25,7 @@ const Admin = () => {
   );
 }
 
-=======
+
 const Admin=()=>{
     return(
         <>
@@ -33,5 +33,5 @@ const Admin=()=>{
         </>
     )
 }
->>>>>>> 7b425c3e568c7e513e280977cc29a6ed13dd4186
+
 export default Admin;
