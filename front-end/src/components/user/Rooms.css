@@ -1,0 +1,226 @@
+/* General Page Styling */
+.rooms-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+/* Header */
+.rooms-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rooms-header h2 {
+  color: #2c3e50;
+}
+
+.btn-logout {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-logout:hover {
+  background-color: #c9302c;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.filter-buttons button {
+  padding: 10px 18px;
+  background: #ffffff;
+  color: #333;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-buttons button:hover,
+.filter-buttons button.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Room Cards Grid */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Room Card */
+.room-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.room-card:hover {
+  transform: scale(1.02);
+}
+
+.room-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.room-details {
+  padding: 15px;
+}
+
+.room-card h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.room-card p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Book Now Button */
+.room-card button {
+  display: block;
+  margin: 15px 0 0 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.room-card button:hover {
+  background-color: #218838;
+}
+
+/* Modal Overlay */
+.booking-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Booking Modal Container */
+.booking-container {
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  position: relative;
+  animation: fadeIn 0.4s ease-in-out;
+  z-index: 1001; /* Ensure the modal content is above the overlay */
+}
+
+/* Ensure modal content is clickable */
+.booking-container,
+.booking-container input,
+.modal-buttons button {
+  pointer-events: auto;
+}
+
+/* FadeIn Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.booking-container h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.booking-container label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.booking-container input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline-color: #007bff;
+}
+
+/* Modal Buttons Container */
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Confirm Booking Button */
+.modal-buttons button:first-child {
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.modal-buttons button:first-child:hover {
+  background-color: #0056b3;
+}
+
+/* Cancel Button */
+.modal-buttons button:last-child {
+  background-color: #dc3545;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.modal-buttons button:last-child:hover {
+  background-color: #b52a37;
+}
